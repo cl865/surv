@@ -1,0 +1,366 @@
+<!--survival after palliative RT calculator main page-->
+
+<!-- start html doc -->
+<!DOCTYPE html>
+<html>
+<head lang = "en">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163204023-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'UA-163204023-1');
+	</script>
+
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+	<title> Calculate </title>
+
+<!-- link scripts -->
+ 	<script src = "script.js"></script>
+
+
+</head>
+
+
+<body>
+
+<h1 class = "main-title" align = "center"> Survival after Palliative Radiation Therapy </h1>
+
+<!-- interactive nav bar, toggle between calculator and about page-->
+
+<div align = "center">
+	<ul id = "nav">
+		<li><a href = "index.html" class = "active-page"> CALCULATE </a></li>
+		<li><a href = "about.html"> ABOUT </a></li>
+	<ul>
+</div>
+
+<!-- begin calculator -->
+<!-- set background -->
+
+<div style="background-color: #F3F3F3; border-radius: 15px; width: 370px; margin: 0 auto">
+
+	<!-- build form -->
+	<div style="width: 360px; margin: 0 auto">
+		<form style = "padding-left: 10px; font-size: 16px" method="post">
+			
+			<br>
+
+			 <h4> Age <span style="font-size: 12px"> (years) </span>: </h4>
+
+			<input type="number" name = "age" id = "age_input" style="font-size: 14px" min = "0" value = "50">
+
+			<br></br>
+
+			<div class = "radio-toolbar">
+
+				<h4> Sex: </h4>
+
+				<input type = "radio" id = "sexMale" name = "sex" value = "male" checked>  
+				<label for = "sexMale" style="margin-left: 10px"> Male </label>
+
+				<input type = "radio" id = "sexFemale" name = "sex" value = "female">
+				<label for = "sexFemale"> Female </label>
+			</div>
+
+			<br>
+
+			
+			<h4> Charlson-Deyo Comorbidity Score: </h4>
+
+			
+
+			<div class = "radio-toolbar" style="text-align: center; padding-top: 5px">
+
+			
+				<input type = "radio" id = "cdcs0" name = "cdcs" value = 0 checked>
+				<label for = "cdcs0" style="margin-left: 10 px"> 0 </label>
+
+				<input type = "radio" id = "cdcs1" name = "cdcs" value = 1>
+				<label for = "cdcs1"> 1 </label>
+
+				<input type = "radio" id = "cdcs2" name = "cdcs" value = 2>
+				<label for = "cdcs2"> 2 </label>
+
+				<input type = "radio" id = "cdcs3" name = "cdcs" value = 3>
+				<label for = "cdcs3"> 3+ </label>
+
+			</div>
+			
+
+			<br>
+
+			<!-- mets portion of form as a table -->
+		
+			<h4> Metastases: </h4>
+
+
+			<table style="padding-left: 40px">
+			<tbody>
+			<tr>
+			<td> Bone </td>
+			<td> 	
+				<div class = "radio-toolbar" style="padding-left: 20px">
+					<input type = "radio" id = "boneYes" name = "bone" value = "yes">
+					<label for = "boneYes" style = "margin-left: 10px"> Yes </label>
+
+					<input type = "radio" id = "boneNo" name = "bone" value = "no" checked>
+					<label for = "boneNo"> No </label>
+
+					<input type = "radio" id = "boneOther" name = "bone" value = "other" >
+					<label for = "boneOther"> Unknown </label>
+
+
+
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td> Brain </td>
+			<td>
+				<div class = "radio-toolbar" style="padding-left: 20px">
+					<input type = "radio" id = "brainYes" name = "brain" value = "yes">
+					<label for = "brainYes" style = "margin-left: 10px"> Yes </label>
+
+					<input type = "radio" id = "brainNo" name = "brain" value = "no" checked>
+					<label for = "brainNo"> No </label>
+
+					<input type = "radio" id = "brainOther" name = "brain" value = "other" >
+					<label for = "brainOther"> Unknown </label>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td> Liver </td>
+			<td> 
+				<div class = "radio-toolbar" style="padding-left: 20px">
+					<input type = "radio" id = "LiverYes" name = "liver" value = "yes">
+					<label for = "LiverYes" style = "margin-left: 10px"> Yes </label>
+
+					<input type = "radio" id = "LiverNo" name = "liver" value = "no" checked>
+					<label for = "LiverNo"> No </label>
+
+					<input type = "radio" id = "LiverOther" name = "liver" value = "other" >
+					<label for = "LiverOther"> Unknown </label>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td> Lung</td>
+			<td> 
+				<div class = "radio-toolbar" style="padding-left: 20px">
+					<input type = "radio" id = "LungYes" name = "lung" value = "yes">
+					<label for = "LungYes" style = "margin-left: 10px"> Yes </label>
+
+					<input type = "radio" id = "LungNo" name = "lung" value = "no" checked>
+					<label for = "LungNo"> No </label>
+
+					<input type = "radio" id = "LungOther" name = "lung" value = "other" >
+					<label for = "LungOther"> Unknown </label>
+				</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+
+			<br>
+
+			<h4> Tumor Primary: </h4>
+			
+			<div class = "radio-toolbar" style="text-align: center; padding-top: 5px">
+
+				<input type = "radio" id = "primaryProstate" name = "primary" value = "prostate" checked>  
+				<label for = "primaryProstate"> Prostate </label>
+
+				<input type = "radio" id = "primaryBreast" name = "primary" value = "breast">  
+				<label for = "primaryBreast"> Breast </label>
+
+				<input type = "radio" id = "primaryLung" name = "primary" value = "lung">
+				<label for = "primaryLung"> Lung </label>
+
+				<input type = "radio" id = "primaryOther" name = "primary" value = "other">
+				<label for = "primaryOther"> Other </label>
+
+			</div>
+
+			<br>
+
+			<!-- RT site as a table -->
+
+			<h4> Radiotherapy Site: </h4>
+
+			<table style="padding-left: 38px">
+				<tbody>
+				<tr>
+				<td> Brain, eye </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTbrainYes" name = "RTbrain" value = "yes">
+						<label for = "RTbrainYes"> Yes </label>
+
+						<input type = "radio" id = "RTbrainNo" name = "RTbrain" value = "no" checked>
+						<label for = "RTbrainNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Head and neck, skin, <br> thyroid </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTheentYes" name = "RTheent" value = "yes">
+						<label for = "RTheentYes"> Yes </label>
+
+						<input type = "radio" id = "RTheentNo" name = "RTheent" value = "no" checked>
+						<label for = "RTheentNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Thorax </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTthoraxYes" name = "RTthorax" value = "yes">
+						<label for = "RTthoraxYes"> Yes </label>
+
+						<input type = "radio" id = "RTthoraxNo" name = "RTthorax" value = "no" checked>
+						<label for = "RTthoraxNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Stomach, liver, pancreas, <br> kidney, abdomen </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTgitYes" name = "RTgit" value = "yes">
+						<label for = "RTgitYes"> Yes </label>
+
+						<input type = "radio" id = "RTgitNo" name = "RTgit" value = "no" checked>
+						<label for = "RTgitNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Breast </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTbreastYes" name = "RTbreast" value = "yes">
+						<label for = "RTbreastYes"> Yes </label>
+
+						<input type = "radio" id = "RTbreastNo" name = "RTbreast" value = "no" checked>
+						<label for = "RTbreastNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Bone </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTboneYes" name = "RTbone" value = "yes">
+						<label for = "RTboneYes"> Yes </label>
+
+						<input type = "radio" id = "RTboneNo" name = "RTbone" value = "no" checked>
+						<label for = "RTboneNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Soft tissue</td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTsoftYes" name = "RTsoft" value = "yes">
+						<label for = "RTsoftYes"> Yes </label>
+
+						<input type = "radio" id = "RTsoftNo" name = "RTsoft" value = "no" checked>
+						<label for = "RTsoftNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Pelvis </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTpelvisYes" name = "RTpelvis" value = "yes">
+						<label for = "RTpelvisYes"> Yes </label>
+
+						<input type = "radio" id = "RTpelvisNo" name = "RTpelvis" value = "no" checked>
+						<label for = "RTpelvisNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				<tr>
+				<td> Other </td>
+				<td>
+					<div class = "radio-toolbar">
+						<input type = "radio" id = "RTotherYes" name = "RTother" value = "yes">
+						<label for = "RTotherYes"> Yes </label>
+
+						<input type = "radio" id = "RTotherNo" name = "RTother" value = "no" checked>
+						<label for = "RTotherNo"> No </label>
+					</div>
+				</td>
+				</tr>
+				</tbody>
+			</table>
+
+		</form>
+
+		<br>
+			
+			<!-- wrap submit button for alignment -->
+			<div style="text-align: center">
+				<input type="submit" value = "Submit" onclick="calc();"> 
+			</div>
+
+	</div>
+
+	<!-- out of form div, in results div -->
+
+	<!-- results div is the same size as forms div for alignment -->
+	<div class = "form-submit" style="width: 360px; margin: 0 auto; padding-left: 0px">
+		<table style="padding-top:25px; table-layout: fixed; width: 300px", align = "center">
+			<thead style="background-color: #D7E3F0;">
+				<tr>
+					<th style="font-weight:bold; padding-top: 5px; padding-bottom: 5px"> Outcome </th>
+					<th style="font-weight:bold"> Probability </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> 1-year survival </td>
+					<td> <span id = "display_surv1"></span> </td>
+				</tr>
+				<tr>
+					<td> 5-year survival </td>
+					<td> <span id = "display_surv5"></span> </td>
+				</tr>
+			</tbody>
+		</table>
+	<br>
+
+	<!-- display risk category -->
+
+	<p style="padding-left: 70px; text-align:left; font-weight:bold">
+		Risk category: <span style = "font-weight: normal" id = "display_cat"> </span>
+
+	</p>
+
+	<br><br><br>
+
+	<p>
+		Last updated: 1/7/2023
+	</p>
+
+	<br>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>
