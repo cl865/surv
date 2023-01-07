@@ -1,0 +1,147 @@
+/* formatting fonts, sizes and responsive to different web sizes and devices */
+
+html{
+  font-family: Arial;
+}
+
+
+/* designate h4 as covariate header */
+
+h4{
+  margin: 5px;
+  display: inline;
+  color: #005082;
+}
+
+/* format main-title */
+
+.main-title {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 26px;
+  color: black;
+}
+
+@media only screen and (max-width: 750px) {
+  .main-title {
+    font-size: 26px
+    margin-top: 10px;
+  }
+}
+
+/* format navigation bar */
+
+#nav {
+    width: 100%;
+    list-style:none;
+    margin: 0px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: white;
+}
+
+#nav li {
+    display: inline-block;
+    text-align:center;
+}
+
+#nav li a {
+    display:block;
+    text-align:center;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 3px 30px;
+    margin: 10px;
+}
+
+#nav li a:hover{
+    text-shadow: 1 px 0 0 #005082;
+    color: #005082;
+}
+
+
+#nav li a.active-page{
+    font-weight: 800;
+    color: #005082;
+}
+
+/* format radio buttons */
+.radio-toolbar {
+
+}
+
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-family: sans-serif, Arial;
+    color: #323232;
+    font-size: 14px;
+
+}
+
+.radio-toolbar label:hover {
+  background-color: #D7EFF2;
+  cursor: pointer;
+}
+
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #97D2FB;
+    text-shadow: 1px 0 0 #323232
+}
+
+
+td{
+  padding: 1px;
+
+}
+
+/* format submit button */
+
+input[type = submit] {
+  padding:5px 35px; 
+  background: #ddd; 
+  cursor:pointer;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-appearance: none;
+}
+
+input[type = submit]:hover {
+  background-color: #97D2FB;
+  -webkit-appearance: none;
+}
+
+/* format results div */
+
+.form-submit {
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* formatting about page */
+
+.about{
+  width: 360px; 
+  margin: 0 10px;
+  padding-top: 20px;
+}
+
+.about p{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
